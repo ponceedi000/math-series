@@ -1,11 +1,4 @@
-from math_series.series import __version__
-from math_series.series import sum_series
-from math_series.series import lucas
 from math_series.series import fibonacci
-
-def test_version():
-    assert __version__ == '0.1.0'
-
 
 def test_fibonacci_9():
     expected = 34
