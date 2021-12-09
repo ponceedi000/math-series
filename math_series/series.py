@@ -20,7 +20,8 @@ def fibonacci(n):
 
 def lucas(n):
   """
-  similar to above but adjust the base case
+  lucas sequence and finonacci sequence are very similar
+  Just like above, adjust the base case appropriately:
   if n = 0 then return 2
   if n = 1 then return 1
   """
@@ -32,18 +33,19 @@ def lucas(n):
     return lucas(n-1) + lucas(n-2)
 
 
-def sum_series(n, a=0, b=1):
+def sum_series(n, a, b):
   """
-  similar to above but adjust the base case
-  if n = 0 then return 2
-  if n = 1 then return 1
+  use 3 parameters in our function
+  create logic for both fibonacci function and lucas function
+  ensure param a and b have base cases applied depending on the function used above
+  Finally, return the sum values like we have above  
   """
-  if n == 0:
-    return a
-  if n == 1:
-    return b
-  if n == 2:
-    return b
-  elif n > 2:
-    return sum_series(n-1, a, b) + sum_series(n-2, a, b)
-    
+  if a == 0 and b == 1: 
+    return fibonacci(n)
+  elif a == 2 and b == 1:
+    return lucas(n)
+  else:
+    if n == 0: return a
+    elif n == 1: return b
+    else:
+      return sum_series(n-1, a, b) + sum_series(n-2, a, b)
